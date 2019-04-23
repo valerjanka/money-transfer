@@ -20,7 +20,7 @@
         <module>modules/money-transfer-api</module>
         <module>modules/money-transfer-dao-h2</module>
         <module>modules/money-transfer-server-jetty</module>
-        <module>modules/money-transfer-jetty-h2</module>
+        <module>modules/money-transfer-demo</module>
     </modules>
 
     <!--
