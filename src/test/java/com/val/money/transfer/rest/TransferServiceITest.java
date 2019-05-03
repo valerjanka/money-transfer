@@ -184,7 +184,7 @@ public class TransferServiceITest {
                 transferService.transfer(USER_TRANSACTION);
             } catch (TransferValidationException e) {
                 FAILED_COUNTER.incrementAndGet();
-                LOGGER.error("Failed executing transfer fund task with id {}. Error: {}", Thread.currentThread().getId(), e.getMessage(), e);
+                LOGGER.warn("Failed executing transfer fund task with id {} - might be OK. Error: {}", Thread.currentThread().getId(), e.getMessage());
             }
         }
     }
