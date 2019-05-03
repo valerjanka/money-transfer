@@ -106,7 +106,7 @@ public class BalanceUpdater {
         Objects.requireNonNull(userTransaction.getTransferAmount(), "Transfer amount could not be null");
         if (userTransaction.getTransferAmount().compareTo(fromAccount.getBalance()) > 0) {
             throw new TransferValidationException("Source account '" + fromAccount.getId() +
-                    "' does not have enough fund");
+                    "' does not have enough funds");
         }
     }
 }
