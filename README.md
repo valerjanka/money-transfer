@@ -34,7 +34,7 @@ It will start Jetty server with demo H2 db
    * Service can only update Account balance.
    * method getAllAccounts (/account/all) was added mostly for testing purposes
 4. User transaction executes only if currency of both accounts is the same. Additional currency conversion logic could be added into BalanceUpdater class
-5. We do not create User transactions in DB. 
+5. We do not store/log User transactions in DB. 
 
 ## Design
 1. Bootstrap - is main class, which initializes everything by app.properties file. 
@@ -49,7 +49,7 @@ It will start Jetty server with demo H2 db
 5. Model: 
     * Account - DAO and REST (for testing) object
     * UserTransaction - only REST request object
-6. app.properties files - specifies:
+6. app.properties file - specifies:
     * REST Server = JETTY
     * DAO factory = DEMO-JDBC / JDBC (with demo model or without)
     * http port for rest server. Default = 8082 
@@ -71,5 +71,5 @@ Ends on *ITest.java.
 
 ### Notes
 1. Maven project code could be divided into separate modules: rest server implementation, DAO implementation and Demo.
-2. ServiceLoader is used to improve unit testing and make project more generic
+2. ServiceLoader is used for DI to improve unit testing and make project more generic
 3. DB connection is created and closed for each transaction. Could be improved with using connection pool.
